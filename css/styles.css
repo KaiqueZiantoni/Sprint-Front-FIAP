@@ -239,4 +239,26 @@ footer {
    transform-origin: center center;
 }
 
+@media (max-width: 1024px) {
+   .container-top {
+       flex-direction: column;
+       gap: 20px;
+       text-align: center;
+   }
+
+   .menu-inicial .cabecalho {
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+
+   .FAQ-Contatos {
+       margin-left: 0;
+       justify-content: center;
+       flex-wrap: wrap;
+   }
+
+   .FAQ-Contatos li:first-child a {
+       margin-left: 0;
+   }
+}
 
