@@ -55,11 +55,6 @@ body {
 }
 
 
-.logo-leaf {
-   color: var(--cor-branco);
-   margin-right: 10px;
-}
-
 
 .menu-inicial .cabecalho {
    display: flex;
@@ -70,7 +65,6 @@ body {
 .cabecalho :hover{
    color: #0a1e4d93;
 }
-
 
 .menu-inicial a {
    color: var(--cor-branco);
@@ -84,4 +78,54 @@ body {
 
 .menu-inicial a:hover {
    opacity: 10;
+}
+
+.FAQ-Contatos {
+   display: flex;
+   gap: 15px;
+   margin-left: 20px;
+   align-items: center;
+}
+
+
+.FAQ-Contatos li {
+   list-style: none;
+}
+
+
+.FAQ-Contatos a {
+   padding: 10px 24px;
+   border-radius: 50px;
+   font-weight: 600;
+   display: inline-block;
+   transition: transform 0.2s ease, background-color 0.3s;
+   opacity: 2 !important; ;
+}
+
+
+
+
+.FAQ-Contatos li:first-child a {
+   border: 2px solid rgba(255, 255, 255, 0.6);
+   background-color: transparent;
+   color: var(--cor-branco);
+   margin-left: 20vh;
+
+
+}
+
+
+.FAQ-Contatos li:first-child a:hover {
+   background-color: rgba(255, 255, 255, 0.22);
+}
+
+
+.FAQ-Contatos li:last-child a {
+   background-color: var(--cor-verde-folha);
+   color: var(--cor-branco);
+}
+
+
+.FAQ-Contatos li:last-child a:hover {
+   background-color: #11651b;
 }
