@@ -6,6 +6,14 @@
   </a>
 </div>
 
+### Participantes(Colaboradores):
+- RM | Nome
+  - 569103 | Carlos Eduardo Oliveira Silva 
+  - 571046 | Allyson Victor 
+  - 570294 | Kaique Ziantoni 
+  - 573058 | Marcus Vinicius Costa 
+  - 571506 | Silas Oliveira
+  - 
 ### Projeto desenvolvido para a matéria de front-end FIAP (Sprint) -- Desenvolvido pelo grupo Un-glitch tech
 - Essa sprint se refere apenas ao site de demonstração do projeto para matéria de front-end da FIAP
   Principais atribuições :
