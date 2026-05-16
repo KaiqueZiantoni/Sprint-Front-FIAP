@@ -1,4 +1,4 @@
-# Sprint-Front-FIAP
+# Sprint Front-End (FIAP) -- SoulMove
 
 <div align="center">
   <a href="https://sprint-front-fiap.vercel.app/" target="_blank">
