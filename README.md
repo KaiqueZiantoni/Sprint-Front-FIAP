@@ -6,6 +6,15 @@
   </a>
 </div>
 
+### Projeto desenvolvido para a matéria de front-end FIAP (Sprint) -- Desenvolvido pelo grupo Un-glitch tech
+- Essa sprint se refere apenas ao site de demonstração do projeto para matéria de front-end da FIAP
+  Principais atribuições :
+  - Utilização de **HTML**, **CSS** e **JavaScript**;
+  - Utilização de clean code, seguindo as regras da sprint;
+  - Site 100% responsivo para todos os tamanhos de tela;
+
+
+
 <p align="center">
 <h2>Site desenvolvido para apresentação do pitch do projeto: </h2>
   <img width="2522" height="949" alt="site-soulmove" src="https://github.com/user-attachments/assets/579f9fb9-838d-496c-9960-62635979247b" alt="SoulMove Dashboard" width="50%"/>
