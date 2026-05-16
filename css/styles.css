@@ -330,4 +330,33 @@ footer {
        font-weight: bold;
    }
 }
+@media (max-width: 480px) {
+   .logo-texto {
+       font-size: 1.5rem;
+   }
+   .imagem-logo {
+       height: 60px;
+   }
+   .menu-inicial .cabecalho {
+       gap: 15px;
+       flex-direction: column;
+   }
+   header {
+       padding: 40px 5% 20px 5%;
+   }
+   main {
+       padding: 40px 5%;
+   }
+   #funcionalidades article {
+       padding: 20px 15px;
+       min-width: 100%;
+   }
+   .texto-arquitetura h2 {
+       font-size: 1.6rem;
+       margin-bottom: 25px;
+   }
+   .texto-arquitetura {
+       margin-top: 50px;
+   }
+}
 
