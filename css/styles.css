@@ -261,4 +261,73 @@ footer {
        margin-left: 0;
    }
 }
+@media (max-width: 768px) {
+   body {
+       position: relative;
+       background-image: none;
+       background-color: #0a193d;
+   }
+
+
+   body::before {
+       content: "";
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: -1;
+       background-image: url('../img/background-mobile.jpg');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       opacity: 0.3;
+  
+}
+   header h1 {
+       font-size: 1.8rem;
+       text-align: center;
+       letter-spacing: -1px;
+   }
+
+   .menu-inicial a {
+       font-size: 1.1rem;
+   }
+
+   .FAQ-Contatos {
+       flex-direction: column;
+       width: 100%;
+       gap: 10px;
+   }
+
+   .FAQ-Contatos li {
+       width: 100%;
+   }
+
+   .FAQ-Contatos a {
+       width: 100%;
+       text-align: center;
+   }
+
+   #funcionalidades h2,
+   .texto-arquitetura h2 {
+       font-size: 2rem;
+   }
+
+   #funcionalidades {
+       gap: 20px;
+   }
+
+   #funcionalidades article {
+       padding: 30px 20px;
+   }
+
+   .texto-arquitetura {
+       margin-top: 60px;
+   }
+   header h1 span{
+       color: #25fdb8;
+       font-weight: bold;
+   }
+}
 
