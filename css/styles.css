@@ -11,3 +11,18 @@
    padding: 0;
    box-sizing: border-box;
 }
+body {
+   background-image:
+           linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+           url('../img/fundo-site.png');
+          
+       background-size:cover;
+       background-position:center;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       color: var(--cor-branco);
+       font-family: 'Roboto', sans-serif;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+}
