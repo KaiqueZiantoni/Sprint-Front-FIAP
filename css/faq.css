@@ -45,7 +45,7 @@
     color: var(--cor-branco);
     line-height: 1.5;
 }
-.faq-item-active .faq-answer {
+.faq-item.active .faq-answer {
     max-height: 300px;
     padding:18px
 }
