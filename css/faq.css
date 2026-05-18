@@ -33,8 +33,12 @@
 }
 
 .faq-answer {
-    color: var(--cor-branco);
-    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: var(--cor-azul-escuro);
+    border-top: 1px solid var(--cor-azul-claro);
 }
 .faq-answer p {
     margin: 0;
