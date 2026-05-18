@@ -6,9 +6,9 @@ items.forEach(item => {
     button.addEventListener("click", () => {
       items.forEach(el => {
             if (el !== item) {
-                el.classList.remove("active");
+                el.classList.remove("item-active");
             }
         });
-        item.classList.toggle("active");
+        item.classList.toggle("item-active");
     });
 });

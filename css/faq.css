@@ -24,7 +24,7 @@
 
     font-size: 16px;
     font-weight: 600;
-    color: black;
+    color: var(--cor-branco);
 
     cursor: pointer;
     display: flex;
