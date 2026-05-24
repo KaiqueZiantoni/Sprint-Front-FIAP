@@ -41,7 +41,7 @@
         <section class="area-formulario">
             <h2>Envie sua mensagem</h2>
 
-            <form id="formContato">
+            <form id="formContato" onsubmit="validarFormulario(event)">
                     <div class="campo-form">
                       <label for="nome">Nome</label>
                       <input type="text" id="nome" name="nome">
@@ -75,5 +75,6 @@
     <footer>
         <p>&copy; 2026 Challenge Soul Up - SoulMove <br> Desenvolvido por Un-glitch tech</p>
     </footer>
+    <script src="../js/contatos.js"></script>
 </body>
 </html>
