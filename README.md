@@ -16,6 +16,8 @@
  
 ## Link da apresentação do projeto no youtube:
 [![Assistir SoulMove](https://img.shields.io/badge/YouTube-Assistir_ao_Vídeo_SoulMove-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=4yXOEV7NeY0)
+## Link repositório GitHub:
+- https://github.com/KaiqueZiantoni/Sprint-Front-FIAP
 ### Projeto desenvolvido para a matéria de front-end FIAP (Sprint) -- Desenvolvido pelo grupo Un-glitch tech
 - Essa sprint se refere apenas ao site de demonstração do projeto para matéria de front-end da FIAP
   Principais atribuições :
