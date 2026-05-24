@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SoulMove | Contatos</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contatos.css">
 </head>
 <body>
-    
+    <div class="container-top">
+        <section>
+            <img class="imagem-logo" src="../img/soulmove-logo.jpeg" alt="logo-SoulMove">
+        </section>
+        <nav class="menu-inicial">
+            <ul class="cabecalho">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="integrantes.html">Quem somos</a></li>
+                <li><a href="sobre.html">Sobre nós</a></li>
+                <section class="FAQ-Contatos">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contatos.html">Contatos</a></li>
+                </section>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <header>
+            <h1>Fale com a <span>SoulMove</span></h1>
+            <p>Entre em contato com o nosso projeto.</p>
+        </header>
+
+        <section class="info-contato">
+            <h2>Informações de contato</h2>
+            <p><strong>E-mail:</strong> contato@soulmove.com</p>
+            <p><strong>Atendimento:</strong> Segunda a sexta, das 9h ás 18h</p>
+            <p><strong>Projeto:</strong> SoulMove - mobilidade sustentável com tecnologia e recompensas.</p>
+        </section>
+
+        <section class="area-formulario">
+            <h2>Envie sua mensagem</h2>
+
+            <form id="formContato" onsubmit="validarFormulario(event)">
+                    <div class="campo-form">
+                      <label for="nome">Nome</label>
+                      <input type="text" id="nome" name="nome">
+                      <p class="erro" id="erroNome"></p>
+                    </div>
+
+                    <div class="campo-form">
+                      <label for="email">E-mail</label>
+                      <input type="email" id="email" name="email">
+                      <p class="erro" id="erroEmail"></p>
+                    </div>
+
+                    <div class="campo-form">
+                      <label for="assunto">Assunto</label>
+                      <input type="text" id="assunto" name="assunto">
+                      <p class="erro" id="erroAssunto"></p>
+                    </div>
+
+                    <div class="campo-form">
+                      <label for="mensagem">Mensagem</label>
+                      <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                      <p class="erro" id="erroMensagem"></p>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                    <p id="mensagemSucesso"></p>
+                </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Challenge Soul Up - SoulMove <br> Desenvolvido por Un-glitch tech</p>
+    </footer>
+    <script src="../js/contatos.js"></script>
 </body>
 </html>

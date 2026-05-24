@@ -1,0 +1,95 @@
+.info-contato,
+.area-formulario {
+   background: rgba(10, 25, 61, 0.75);
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   border-radius: 18px;
+   padding: 30px;
+   margin-bottom: 30px;
+   backdrop-filter: blur(8px);
+}
+
+.info-contato h2,
+.area-formulario h2 {
+   color: var(--cor-verde-folha);
+   margin-bottom: 18px;
+}
+
+.info-contato p {
+   line-height: 1.7;
+   margin-bottom: 10px;
+}
+
+#formContato {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+
+.campo-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.campo-form label {
+   font-weight: 600;
+   margin-bottom: 6px;
+}
+
+.campo-form input,
+.campo-form textarea {
+   padding: 12px;
+   border: 1px solid rgba(255, 255, 255, 0.4);
+   border-radius: 10px;
+   background: rgba(255, 255, 255, 0.12);
+   color: var(--cor-branco);
+   font-family: 'Roboto', sans-serif;
+   font-size: 1rem;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+   outline: none;
+   border-color: var(--cor-verde-folha);
+}
+
+.campo-form textarea {
+   resize: vertical;
+}
+
+.erro {
+   color: #ffb0b0;
+   min-height: 18px;
+   font-size: 0.9rem;
+   margin-top: 5px;
+}
+
+#formContato button {
+   width: fit-content;
+   padding: 12px 28px;
+   border: none;
+   border-radius: 50px;
+   background: var(--cor-verde-folha);
+   color: var(--cor-branco);
+   font-weight: 700;
+   cursor: pointer;
+}
+
+#formContato button:hover {
+   background: #11651b;
+}
+
+#mensagemSucesso {
+   color: #9dffad;
+   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+   .info-contato,
+   .area-formulario {
+       padding: 22px;
+   }
+
+   #formContato button {
+       width: 100%;
+   }
+}
