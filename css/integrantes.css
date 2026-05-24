@@ -52,3 +52,34 @@
    background: rgba(10, 25, 61, 0.86);
 }
 
+.integrante-item img {
+   width: 118px;
+   height: 118px;
+   margin-bottom: 22px;
+   border-radius: 50%;
+   border: 3px solid rgba(85, 199, 99, 0.8);
+   object-fit: cover;
+   background:
+       linear-gradient(135deg, rgba(85, 199, 99, 0.34), rgba(255, 255, 255, 0.08)),
+       var(--cor-azul-escuro);
+   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.integrante-item img[src=""] {
+   display: block;
+   font-size: 0;
+}
+
+.integrante-item h2 {
+   color: var(--cor-branco);
+   font-size: 1.35rem;
+   font-weight: 700;
+   margin-bottom: 12px;
+}
+
+.integrante-item p {
+   color: rgba(255, 255, 255, 0.84);
+   font-size: 1rem;
+   line-height: 1.6;
+}
+
