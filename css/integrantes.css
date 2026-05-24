@@ -83,3 +83,13 @@
    line-height: 1.6;
 }
 
+.integrante-links {
+   display: flex;
+   gap: 12px;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: auto;
+   padding-top: 24px;
+}
+
+
