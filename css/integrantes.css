@@ -1,19 +1,24 @@
 .integrantes-main {
-   display: grid;
-   grid-template-columns: repeat(3, minmax(0, 1fr));
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
    gap: 24px;
    padding-top: 35px;
    padding-bottom: 90px;
 }
 
 .integrantes-hero {
-   grid-column: 1 / -1;
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
    text-align: center;
    padding-top: 45px;
    padding-bottom: 12px;
+}
+
+.integrante-item {
+   width: 31%;
 }
 
 .integrantes-hero h1 {
@@ -109,14 +114,19 @@
 }
 
 @media (max-width: 1000px) {
-   .integrantes-main {
-       grid-template-columns: repeat(2, minmax(0, 1fr));
+   .integrante-item {
+       width: 45%;
+   }
+}
+
+@media (max-width: 700px) {
+   .integrante-item {
+       width: 100%;
    }
 }
 
 @media (max-width: 700px) {
    .integrantes-main {
-       grid-template-columns: 1fr;
        gap: 26px;
        padding-top: 20px;
        padding-bottom: 60px;
