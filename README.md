@@ -21,7 +21,10 @@
   - Utilização de clean code, seguindo as regras da sprint;
   - Site 100% responsivo para todos os tamanhos de tela;
 
-
+## Técnologias utilizadas
+- HTML5
+- CSS3
+- JavaScript
 
 <p align="center">
 <h2>Site desenvolvido para apresentação do pitch do projeto: </h2>
