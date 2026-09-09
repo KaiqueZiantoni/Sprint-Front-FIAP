@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tema do projeto SoulMove - identidade visual mantida da Sprint 02 */
+@theme {
+  --color-azul-escuro: #0a193d;
+  --color-verde-folha: #55c763;
+  --color-verde-escuro: #11651b;
+  --font-sans: "Roboto", sans-serif;
+}
