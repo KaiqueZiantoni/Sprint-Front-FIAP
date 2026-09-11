@@ -1,0 +1,55 @@
+import type { Integrante } from "../types";
+
+export const integrantes: Integrante[] = [
+  {
+    id: 1,
+    nome: "Allyson Victor",
+    rm: "571046",
+    turma: "1TDSPV",
+    responsabilidade: 'Responsável pela página "Sobre"',
+    foto: "/img/ally.jpg",
+    github: "https://github.com/Ally7574",
+    linkedin: "https://www.linkedin.com/in/allyson-victor-0804a9313/",
+  },
+  {
+    id: 2,
+    nome: "Carlos Eduardo",
+    rm: "569103",
+    turma: "1TDSPV",
+    responsabilidade: 'Responsável pela página "Integrantes"',
+    foto: "/img/Cadu.JPG",
+    github: "https://github.com/ceduardoos",
+    linkedin: "https://www.linkedin.com/in/carlos-eduardo-silva-573550158",
+  },
+  {
+    id: 3,
+    nome: "Kaique Ziantoni",
+    rm: "570294",
+    turma: "1TDSPV",
+    responsabilidade: 'Responsável pela página "Principal"',
+    foto: "/img/Kaique.jpeg",
+    github: "https://github.com/KaiqueZiantoni",
+    linkedin: "https://www.linkedin.com/in/kaiqueziantoni/",
+  },
+  {
+    id: 4,
+    nome: "Marcus Vinicius",
+    rm: "573058",
+    turma: "1TDSPV",
+    responsabilidade: 'Responsável pela página "FAQ"',
+    foto: "/img/Marcus.jpg",
+    github: "https://github.com/Costa-Marcus",
+    linkedin: "https://www.linkedin.com/in/costa-marcus-v/",
+  },
+  {
+    id: 5,
+    nome: "Silas Oliveira",
+    rm: "571506",
+    turma: "1TDSPV",
+    responsabilidade: 'Responsável pela página "Contatos"',
+    foto: "/img/silas.jpg",
+    github: "https://github.com/SilasAngare1",
+    linkedin:
+      "https://www.linkedin.com/in/silas-angare-pedroso-de-oliveira-55004430a/",
+  },
+];

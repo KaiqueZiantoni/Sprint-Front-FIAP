@@ -47,3 +47,31 @@ soulmove-sprint3/
 ├── vite.config.ts              # Configuração Vite + plugins React e Tailwind
 └── tsconfig.json               # Configuração TypeScript
 ```
+
+---
+
+## 👥 Autores e Créditos — Grupo Un-glitch tech
+
+| Foto | Nome | RM | Turma | GitHub | LinkedIn |
+|---|---|---|---|---|---|
+| <img src="public/img/ally.jpg" width="70" style="border-radius:50%" /> | Allyson Victor | 571046 | 1TDSPV | [GitHub](https://github.com/Ally7574) | [LinkedIn](https://www.linkedin.com/in/allyson-victor-0804a9313/) |
+| <img src="public/img/Cadu.JPG" width="70" style="border-radius:50%" /> | Carlos Eduardo Oliveira Silva | 569103 | 1TDSPV | [GitHub](https://github.com/ceduardoos) | [LinkedIn](https://www.linkedin.com/in/carlos-eduardo-silva-573550158) |
+| <img src="public/img/Kaique.jpeg" width="70" style="border-radius:50%" /> | Kaique Ziantoni | 570294 | 1TDSPV | [GitHub](https://github.com/KaiqueZiantoni) | [LinkedIn](https://www.linkedin.com/in/kaiqueziantoni/) |
+| <img src="public/img/Marcus.jpg" width="70" style="border-radius:50%" /> | Marcus Vinicius Costa | 573058 | 1TDSPV | [GitHub](https://github.com/Costa-Marcus) | [LinkedIn](https://www.linkedin.com/in/costa-marcus-v/) |
+| <img src="public/img/silas.jpg" width="70" style="border-radius:50%" /> | Silas Oliveira | 571506 | 1TDSPV | [GitHub](https://github.com/SilasAngare1) | [LinkedIn](https://www.linkedin.com/in/silas-angare-pedroso-de-oliveira-55004430a/) |
+
+---
+
+## 🖼️ Imagens do Projeto
+
+<div align="center">
+  <img src="public/img/arquitetura-soulmove.jpeg" alt="Arquitetura do SoulMove" width="70%" />
+  <p><em>Arquitetura da solução SoulMove</em></p>
+</div>
+
+---
+
+## 🔗 Links
+
+- **Repositório GitHub:** https://github.com/KaiqueZiantoni/Sprint-Front-FIAP
+- **Vídeo de apresentação (YouTube):** https://www.youtube.com/watch?v=4yXOEV7NeY0
