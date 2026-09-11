@@ -1,3 +1,20 @@
+# 🚌 SoulMove — Sprint 03 | Front-End Design Engineering (FIAP)
+
+<div align="center">
+  <img src="public/img/soulmove-logo.jpeg" alt="Logo SoulMove" width="120" style="border-radius: 12px" />
+  <h3>Mobilidade sustentável que gera impacto, reconhecimento e recompensa 🌱</h3>
+</div>
+
+---
+
+## 📋 Descrição do Projeto
+
+O **SoulMove** é uma solução desenvolvida para o **Challenge Soul Up (FIAP 2026)** pelo grupo **Un-glitch tech**. A proposta transforma mobilidade urbana em impacto sustentável mensurável: o usuário registra jornadas de transporte público, o sistema valida os trajetos de forma segura (localização, tempo e padrões de movimentação) e converte o CO₂ economizado em **Pontos Soul Up**, trocáveis por descontos em passagens e benefícios com parceiros.
+
+Nesta **Sprint 03**, o site desenvolvido nas sprints anteriores (HTML, CSS e JavaScript) foi totalmente **migrado para uma SPA moderna** com **React + Vite + TypeScript**, mantendo o layout e a identidade visual originais, agora com arquitetura de componentes reutilizáveis, navegação com React Router, estilização 100% em TailwindCSS e formulário validado com React Hook Form.
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 | Tecnologia | Função no projeto |
