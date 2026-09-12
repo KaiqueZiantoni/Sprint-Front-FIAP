@@ -92,3 +92,43 @@ soulmove-sprint3/
 
 - **Repositório GitHub:** https://github.com/KaiqueZiantoni/Sprint-Front-FIAP
 - **Vídeo de apresentação (YouTube):** https://www.youtube.com/watch?v=4yXOEV7NeY0
+
+## 🚀 Como Usar (Executar Localmente)
+
+**Pré-requisito:** Node.js 18+ instalado.
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/KaiqueZiantoni/Sprint-Front-FIAP.git
+
+# 2. Acesse a pasta do projeto
+cd Sprint-Front-FIAP
+
+# 3. Instale as dependências
+npm install
+
+# 4. Execute em modo de desenvolvimento
+npm run dev
+```
+
+Acesse **http://localhost:5173** no navegador.
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📬 Contato
+
+- **E-mail:** contato@soulmove.com
+- Ou envie sua mensagem pela página **Contatos** do site.
+
+---
+
+<div align="center">
+  <p>Projeto desenvolvido para a disciplina de <strong>Front-End Design Engineering — FIAP</strong> 🎓</p>
+</div>
