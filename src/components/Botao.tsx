@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+ aimport type { ButtonHTMLAttributes, ReactNode } from "react";
 import type { VarianteBotao } from "../types";
 
 interface BotaoProps extends ButtonHTMLAttributes<HTMLButtonElement> {
