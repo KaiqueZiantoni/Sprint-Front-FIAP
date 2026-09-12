@@ -1,6 +1,6 @@
-    import type { PerguntaFaq } from "../types";
+import type { PerguntaFaq } from "../types";
 
-export const perguntasFAQ: PerguntaFaq[] = [
+export const perguntasFaq: PerguntaFaq[] = [
   {
     id: 1,
     pergunta: "O que é a SoulMove?",
@@ -44,4 +44,3 @@ export const perguntasFAQ: PerguntaFaq[] = [
       "O ranking classifica os usuários com base na frequência de uso sustentável do transporte público e na quantidade de CO₂ economizado, incentivando uma competição saudável e ecológica.",
   },
 ];
-
