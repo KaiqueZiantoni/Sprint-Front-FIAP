@@ -41,10 +41,12 @@ soulmove-sprint3/
 │   │   ├── Footer.tsx          # Rodapé do site
 │   │   ├── Layout.tsx          # Estrutura base + título dinâmico (useEffect)
 │   │   ├── Botao.tsx           # Botão com variantes de estilo
+│   │   ├── Grade.tsx           # Grade genérica reutilizável (generics do TypeScript)
 │   │   ├── PageHero.tsx        # Cabeçalho de página reutilizável (props)
 │   │   ├── FeatureCard.tsx     # Card de funcionalidade (useNavigate)
 │   │   ├── FaqItem.tsx         # Item de pergunta/resposta (useState)
-│   │   └── IntegranteCard.tsx  # Card de integrante da equipe
+│   │   ├── IntegranteCard.tsx  # Card de integrante da equipe
+│   │   └── CalculadoraCarbono.tsx # Calculadora interativa de CO₂ (useState)
 │   ├── pages/                  # Páginas da aplicação (rotas)
 │   │   ├── Home.tsx            # Página inicial
 │   │   ├── Integrantes.tsx     # Quem somos
@@ -56,6 +58,8 @@ soulmove-sprint3/
 │   │   └── NotFound.tsx        # Página 404
 │   ├── data/                   # Dados tipados da aplicação
 │   ├── types/                  # Interfaces TypeScript
+│   ├── hooks/                  # Custom hooks (useImpactoCarbono com useMemo)
+│   ├── utils/                  # Funções tipadas de cálculo de impacto de carbono
 │   ├── App.tsx                 # Definição das rotas (React Router)
 │   ├── main.tsx                # Ponto de entrada da aplicação
 │   └── index.css               # Tailwind + tema (cores da identidade visual)
