@@ -11,6 +11,7 @@ const titulosPorRota: Record<string, string> = {
   "/faq": "SoulMove | FAQ",
   "/contato": "SoulMove | Contatos",
   "/solucao": "SoulMove | Solução",
+  "/painel": "SoulMove | Painel",
 };
 
 export default function Layout() {
@@ -19,7 +20,10 @@ export default function Layout() {
   // useEffect: a cada mudança de rota, atualiza o título da página
   // e rola a tela para o topo, melhorando a experiência de navegação SPA
   useEffect(() => {
-    document.title = titulosPorRota[pathname] ?? "SoulMove";
+    // Rotas dinâmicas (/usuarios/:id) definem o próprio título ao carregar os dados
+    if (!pathname.startsWith("/usuarios/")) {
+      document.title = titulosPorRota[pathname] ?? "SoulMove";
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
