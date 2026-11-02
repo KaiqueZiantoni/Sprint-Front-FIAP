@@ -95,3 +95,31 @@ Sprint-Front-FIAP/
 └── tsconfig.json
 ```
 
+---
+
+## 👥 Autores e Créditos — Grupo Un-glitch tech
+
+| Foto | Nome | RM | Turma | GitHub | LinkedIn |
+|---|---|---|---|---|---|
+| <img src="public/img/ally.jpg" width="70" style="border-radius:50%" /> | Allyson Victor | 571046 | 1TDSPV | [GitHub](https://github.com/Ally7574) | [LinkedIn](https://www.linkedin.com/in/allyson-victor-0804a9313/) |
+| <img src="public/img/Cadu.JPG" width="70" style="border-radius:50%" /> | Carlos Eduardo Oliveira Silva | 569103 | 1TDSPV | [GitHub](https://github.com/ceduardoos) | [LinkedIn](https://www.linkedin.com/in/carlos-eduardo-silva-573550158) |
+| <img src="public/img/Kaique.jpeg" width="70" style="border-radius:50%" /> | Kaique Ziantoni | 570294 | 1TDSPV | [GitHub](https://github.com/KaiqueZiantoni) | [LinkedIn](https://www.linkedin.com/in/kaiqueziantoni/) |
+| <img src="public/img/Marcus.jpg" width="70" style="border-radius:50%" /> | Marcus Vinicius Costa | 573058 | 1TDSPV | [GitHub](https://github.com/Costa-Marcus) | [LinkedIn](https://www.linkedin.com/in/costa-marcus-v/) |
+| <img src="public/img/silas.jpg" width="70" style="border-radius:50%" /> | Silas Oliveira | 571506 | 1TDSPV | [GitHub](https://github.com/SilasAngare1) | [LinkedIn](https://www.linkedin.com/in/silas-angare-pedroso-de-oliveira-55004430a/) |
+
+
+---
+
+## 🖼️ Imagens do Projeto
+
+<div align="center">
+  <img src="public/img/arquitetura-soulmove.jpeg" alt="Arquitetura do SoulMove" width="70%" />
+  <p><em>Arquitetura da solução SoulMove</em></p>
+  <img src="docs/painel_viagem.png" alt="Painel integrado à API: viagem registrada e pontos creditados" width="70%" />
+  <p><em>Painel: viagem registrada pela API, CO₂ evitado e pontos creditados</em></p>
+  <img src="docs/usuario_editado.png" alt="Detalhe do usuário: edição, resgate de pontos e histórico" width="70%" />
+  <p><em>Rota dinâmica /usuarios/:id: edição (PUT), resgate de pontos (POST) e histórico de viagens</em></p>
+  <img src="docs/painel_mobile.png" alt="Painel em tela de celular" width="30%" />
+  <p><em>Layout responsivo (480px)</em></p>
+</div>
+
