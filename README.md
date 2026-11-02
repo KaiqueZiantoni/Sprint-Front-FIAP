@@ -123,3 +123,51 @@ Sprint-Front-FIAP/
   <p><em>Layout responsivo (480px)</em></p>
 </div>
 
+---
+
+## 🚀 Como Usar
+
+### Links
+
+| Item | URL |
+|---|---|
+| **Repositório GitHub** | https://github.com/KaiqueZiantoni/Sprint-Front-FIAP |
+| **Deploy na Vercel** | _(preencher após o deploy: https://....vercel.app)_ |
+| **API Java publicada (Render)** | _(preencher após o deploy: https://soulmove-api.onrender.com)_ |
+| **Vídeo de apresentação (YouTube)** | _(preencher: link do vídeo da Sprint 04, até 3 minutos)_ |
+
+### Executar localmente
+
+**Pré-requisitos:** Node.js 18+ e a API Java no ar (local ou na nuvem).
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/KaiqueZiantoni/Sprint-Front-FIAP.git
+cd Sprint-Front-FIAP
+
+# 2. Instale as dependências
+npm install
+
+# 3. Informe o endereço da API (copie o .env.example)
+cp .env.example .env
+# edite VITE_API_URL=http://localhost:8080  (ou a URL do Render)
+
+# 4. Rode o projeto
+npm run dev
+```
+
+Acesse `http://localhost:5173` e abra o menu **Painel**. Para gerar a versão de produção: `npm run build` (saída em `dist/`).
+
+### Deploy na Vercel
+
+1. Importe o repositório na Vercel (framework detectado: Vite).
+2. Em **Settings > Environment Variables**, cadastre `VITE_API_URL` com a URL da API no Render.
+3. Faça o deploy. O arquivo `vercel.json` garante que as rotas da SPA (`/painel`, `/usuarios/3`) funcionem ao recarregar a página.
+
+---
+
+## 📬 Contato
+
+- E-mail do projeto: contato@soulmove.com
+- Página de contato do site: menu **Contatos**
+- Integrantes: links de GitHub e LinkedIn na tabela de autores acima
