@@ -11,6 +11,7 @@ const linksMenu: LinkMenu[] = [
   { rotulo: "Quem somos", rota: "/integrantes" },
   { rotulo: "Sobre nós", rota: "/sobre" },
   { rotulo: "Solução", rota: "/solucao" },
+  { rotulo: "Painel", rota: "/painel" },
 ];
 
 export default function Header() {
