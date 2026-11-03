@@ -7,7 +7,7 @@ import Faq from "./pages/Faq";
 import Contato from "./pages/Contato";
 import Solucao from "./pages/Solucao";
 import SolucaoDetalhe from "./pages/SolucaoDetalhe";
-import Painel from "./pages/painel";  
+import Painel from "./pages/Painel";
 import NotFound from "./pages/NotFound";
 
 export default function App() {

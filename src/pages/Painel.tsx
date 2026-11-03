@@ -116,9 +116,9 @@ export default function Painel() {
   };
 
   const estiloCampo =
-    "w-full rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text white placeholder-white/50 outline-none focus:border-verde-folha";
+    "w-full rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-white placeholder-white/50 outline-none focus:border-verde-folha";
 
-  const estiloCard = "rounded-2xl border border-white/15 bg-azul-escuro/70 p 5 backdrop-blur-sm md:p-6";
+  const estiloCard = "rounded-2xl border border-white/15 bg-azul-escuro/70 p-5 backdrop-blur-sm md:p-6";
 
   return (
     <>
@@ -156,10 +156,10 @@ export default function Painel() {
             )}
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <section className={estiloCard} aria-labelledby="titulo viagem">
+              <section className={estiloCard} aria-labelledby="titulo-viagem">
                 <h2
                   id="titulo-viagem"
-                  className="text-xl font-bold text verde-folha"
+                  className="text-xl font-bold text-verde-folha"
                 >
                   Registrar viagem
                 </h2>
@@ -234,10 +234,10 @@ export default function Painel() {
                 </form>
               </section>
 
-              <section className={estiloCard} aria-labelledby="titulo usuario">
+              <section className={estiloCard} aria-labelledby="titulo-usuario">
                 <h2
                   id="titulo-usuario"
-                  className="text-xl font-bold text verde-folha"
+                  className="text-xl font-bold text-verde-folha"
                 >
                   Cadastrar usuário
                 </h2>
@@ -275,7 +275,7 @@ export default function Painel() {
                   <Botao
                     type="submit"
                     variante="secundario"
-                    className="w full"
+                    className="w-full"
                     disabled={enviando}
                   >
                     Cadastrar
@@ -302,7 +302,7 @@ export default function Painel() {
                           {!u.cadastroAtivo && " (inativo)"}
                         </span>
 
-                        <span className="shrink-0 font-semibold text-verde folha">
+                        <span className="shrink-0 font-semibold text-verde-folha">
                           {u.saldoPontosSoulUp} pts
                         </span>
                       </li>
@@ -314,9 +314,9 @@ export default function Painel() {
 
             <section
               className={`${estiloCard} mt-6`}
-              aria labelledby="titulo-viagens"
+              aria-labelledby="titulo-viagens"
             >
-              <h2 className="text-xl font-bold text verde-folha">
+              <h2 id="titulo-viagens" className="text-xl font-bold text-verde-folha">
                 Viagens registradas
               </h2>
 
@@ -346,14 +346,13 @@ export default function Painel() {
                         {viagens.map((v) => (
                           <tr key={v.idViagem}>
                             <td className="py-2">
-                              {v.dataViagem.split(" ").reverse().join("/")}
+                              {v.dataViagem.split("-").reverse().join("/")}
                             </td>
 
                             <td className="py-2">{v.usuario.nome}</td>
 
                             <td className="py-2">
-                              {v.meioTransporte.tipoModal}
-                              {v.meioTransporte.identificacao}
+                              {v.meioTransporte.tipoModal} {v.meioTransporte.identificacao}
                             </td>
 
                             <td className="py-2 text-right">
@@ -376,7 +375,7 @@ export default function Painel() {
                               <button
                                 type="button"
                                 onClick={() => aoRemoverViagem(v)}
-                                className="cursor-pointer text-red-300 hover:text-red100"
+                                className="cursor-pointer text-red-300 hover:text-red-100"
                               >
                                 Excluir
                               </button>
@@ -404,7 +403,7 @@ export default function Painel() {
                           <span className="font-semibold text-verde-folha">
                             {v.pontosGerados} pts</span>
                         </p>
-                        <div className="mt-2 flex items-center justify between">
+                        <div className="mt-2 flex items-center justify-between">
                           <span>{v.validada ? "Validada" : "Não validada"}</span>
                           <button type="button" onClick={() => aoRemoverViagem(v)} className="cursor-pointer text-red-300">Excluir</button>
                         </div>
