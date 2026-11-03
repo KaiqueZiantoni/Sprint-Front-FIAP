@@ -8,8 +8,7 @@ ResultadoCarbono,
 Usuario,
 Viagem,
 } from "../types";
-// Endereço da API Java (Spring Boot). Em produção vem de VITE_API_URL
-(arquivo .env / Vercel).
+// Endereço da API Java (Spring Boot). Em produção vem de VITE_API_URL (arquivo .env / Vercel)
 export const URL_API: string = import.meta.env.VITE_API_URL ??
 "http://localhost:8080";
 /**
@@ -28,7 +27,7 @@ headers: { "Content-Type": "application/json" },
 ...opcoes,
 });
 } catch {
-throw new Error("Erro de rede ao chamar a API.");
+    throw new Error("Não foi possível conectar à API. Verifique se o servidorestá no ar.");
 }
 if (resposta.status === 204) {
 return undefined as T;
