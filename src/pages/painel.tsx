@@ -326,7 +326,8 @@ export default function Painel() {
                 </p>
               ) : (
                 <>
-                  <div className="mt-4 overflow-x-auto">
+                  {/* Tabela no desktop */}
+                  <div className="mt-4 hidden overflow-x-auto md:block">
                     <table className="w-full text-left text-sm">
                       <thead className="text-white/60">
                         <tr>
@@ -385,6 +386,31 @@ export default function Painel() {
                       </tbody>
                     </table>
                   </div>
+                       {/* Cards no celular */}
+                  <ul className="mt-4 space-y-3 md:hidden">
+                    {viagens.map((v) => (  <li key={v.idViagem} className="rounded-xl bg-white/5 
+                            p-4 text-sm ring-1 ring-white/10">
+                        <div className="flex justify-between">
+                          <span className="font-semibold">{v.usuario.nome}
+                            </span>
+                          <span className="text-white/60">
+                        {v.dataViagem.split("-").reverse().join("/")}</span>
+                        </div>
+                        <p className="mt-1 text-white/80">
+                        {v.meioTransporte.tipoModal} {v.meioTransporte.identificacao}</p>
+                        <p className="mt-1 text-white/80">
+                          {formatarNumero(v.distanciaEmKm, 1)} km · 
+                            {formatarNumero(v.co2EvitadoKg, 2)} kg CO₂ ·{" "}
+                          <span className="font-semibold text-verde-folha">
+                            {v.pontosGerados} pts</span>
+                        </p>
+                        <div className="mt-2 flex items-center justify between">
+                          <span>{v.validada ? "Validada" : "Não validada"}</span>
+                          <button type="button" onClick={() => aoRemoverViagem(v)} className="cursor-pointer text-red-300">Excluir</button>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </>
               )}
             </section>
