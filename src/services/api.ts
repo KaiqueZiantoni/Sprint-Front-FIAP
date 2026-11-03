@@ -1,4 +1,13 @@
-import type { ErroApi, Usuario } from "../types";
+import type {
+AtualizacaoUsuario,
+ErroApi,
+MeioTransporte,
+NovaViagem,
+NovoUsuario,
+ResultadoCarbono,
+Usuario,
+Viagem,
+} from "../types";
 // Endereço da API Java (Spring Boot). Em produção vem de VITE_API_URL
 (arquivo .env / Vercel).
 export const URL_API: string = import.meta.env.VITE_API_URL ??
@@ -32,6 +41,34 @@ throw new Error(erro?.erro ?? `Erro ${resposta.status} na API`);
 return corpo as T;
 }
 export const api = {
+// ----- Usuários -----
 listarUsuarios: () => requisitar<Usuario[]>("/usuarios"),
 buscarUsuario: (id: number) => requisitar<Usuario>(`/usuarios/${id}`),
+cadastrarUsuario: (dados: NovoUsuario) =>
+requisitar<Usuario>("/usuarios", { method: "POST", body:
+JSON.stringify(dados) }),
+atualizarUsuario: (id: number, dados: AtualizacaoUsuario) =>
+requisitar<Usuario>(`/usuarios/${id}`, { method: "PUT", body:
+JSON.stringify(dados) }),
+removerUsuario: (id: number) =>
+requisitar<void>(`/usuarios/${id}`, { method: "DELETE" }),
+resgatarPontos: (id: number, pontos: number) =>
+requisitar<Usuario>(`/usuarios/${id}/resgates`, {
+method: "POST",
+body: JSON.stringify({ pontos }),
+}),
+// ----- Meios de transporte -----
+listarTransportes: () => requisitar<MeioTransporte[]>("/transportes"),
+// ----- Viagens -----
+listarViagens: () => requisitar<Viagem[]>("/viagens"),
+listarViagensDoUsuario: (idUsuario: number) =>
+requisitar<Viagem[]>(`/viagens?idUsuario=${idUsuario}`),
+registrarViagem: (dados: NovaViagem) =>
+requisitar<Viagem>("/viagens", { method: "POST", body:
+JSON.stringify(dados) }),
+removerViagem: (id: number) =>
+requisitar<void>(`/viagens/${id}`, { method: "DELETE" }),
+// ----- Calculadora -----
+calcularImpacto: (kmSemanais: number) =>
+requisitar<ResultadoCarbono>(`/impacto?kmSemanais=${kmSemanais}`),
 };
