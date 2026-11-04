@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import PageHero from "../components/PageHero";
 import Botao from "../components/Botao";
@@ -29,6 +30,7 @@ export default function Painel() {
   const [erro, setErro] = useState<string>("");
   const [enviando, setEnviando] = useState<boolean>(false);
 
+  const navigate = useNavigate();
   const formViagem = useForm<NovaViagem>();
   const formUsuario = useForm<NovoUsuario>();
 
@@ -90,10 +92,11 @@ export default function Painel() {
     try {
       const usuario = await api.cadastrarUsuario(dados);
 
-      setMensagem(`Usuário ${usuario.nome} cadastrado com sucesso (id ${usuario.idUsuario}).`);
-
       formUsuario.reset();
-      await carregar();
+      // Redireciona para a página de detalhe do usuário recém-criado
+      navigate(`/usuarios/${usuario.idUsuario}`, {
+        state: { mensagem: `Usuário ${usuario.nome} cadastrado com sucesso (id ${usuario.idUsuario}).` },
+      });
     } catch (e) {
       setErro((e as Error).message);
     } finally {
@@ -297,10 +300,10 @@ export default function Painel() {
                         key={u.idUsuario}
                         className="flex items-center justify-between gap-2 py-2"
                       >
-                        <span>
+                        <Link to={`/usuarios/${u.idUsuario}`} className="hover:text-verde-folha hover:underline">
                           {u.nome}
                           {!u.cadastroAtivo && " (inativo)"}
-                        </span>
+                        </Link>
 
                         <span className="shrink-0 font-semibold text-verde-folha">
                           {u.saldoPontosSoulUp} pts
@@ -349,7 +352,9 @@ export default function Painel() {
                               {v.dataViagem.split("-").reverse().join("/")}
                             </td>
 
-                            <td className="py-2">{v.usuario.nome}</td>
+                            <td className="py-2">
+                              <Link to={`/usuarios/${v.usuario.idUsuario}`} className="hover:text-verde-folha hover:underline">{v.usuario.nome}</Link>
+                            </td>
 
                             <td className="py-2">
                               {v.meioTransporte.tipoModal} {v.meioTransporte.identificacao}
