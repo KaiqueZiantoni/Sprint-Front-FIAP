@@ -7,3 +7,12 @@
   --color-verde-escuro: #11651b;
   --font-sans: "Roboto", sans-serif;
 }
+
+/* Opcoes dos selects: a lista aberta usa o fundo branco do sistema, entao o
+   texto precisa ser escuro mesmo com o select em text-white (Painel) */
+@layer base {
+  select option {
+    color: var(--color-azul-escuro);
+    background-color: #ffffff;
+  }
+}

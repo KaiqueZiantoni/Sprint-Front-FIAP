@@ -132,8 +132,8 @@ Sprint-Front-FIAP/
 | Item | URL |
 |---|---|
 | **Repositório GitHub** | https://github.com/KaiqueZiantoni/Sprint-Front-FIAP |
-| **Deploy na Vercel** | _(preencher após o deploy: https://....vercel.app)_ |
-| **API Java publicada (Render)** | _(preencher após o deploy: https://soulmove-api.onrender.com)_ |
+| **Deploy na Vercel** | https://sprint-front-fiap.vercel.app |
+| **API Java publicada (Render)** | https://sprint4-java-g3jw.onrender.com |
 | **Vídeo de apresentação (YouTube)** | _(preencher: link do vídeo da Sprint 04, até 3 minutos)_ |
 
 ### Executar localmente
