@@ -10,7 +10,8 @@ import type { AtualizacaoUsuario, EstadoRequisicao, Usuario, Viagem } from "../t
 
 /**
  * Rota dinâmica /usuarios/:id — detalhe de um usuário vindo da API.
- * Mostra os dados e o saldo, lista as viagens do usuário e permite editar o cadastro (PUT).
+ * Mostra os dados e o saldo, lista as viagens do usuário, permite editar o
+ * cadastro (PUT), resgatar pontos (POST) e excluir o usuário (DELETE).
  */
 export default function UsuarioDetalhe() {
   const { id } = useParams<{ id: string }>();
@@ -25,6 +26,7 @@ export default function UsuarioDetalhe() {
   // Mensagem enviada pelo redirecionamento após o cadastro no Painel
   const [mensagem, setMensagem] = useState<string>((location.state as { mensagem?: string } | null)?.mensagem ?? "");
   const [editando, setEditando] = useState<boolean>(false);
+  const [pontosResgate, setPontosResgate] = useState<number>(50);
 
   const form = useForm<AtualizacaoUsuario>();
 
@@ -65,6 +67,28 @@ export default function UsuarioDetalhe() {
       setUsuario(atualizado);
       setEditando(false);
       setMensagem("Cadastro atualizado com sucesso.");
+    } catch (e) {
+      setErro((e as Error).message);
+    }
+  };
+
+  const aoResgatar = async (): Promise<void> => {
+    setErro("");
+    try {
+      const atualizado = await api.resgatarPontos(idUsuario, pontosResgate);
+      setUsuario(atualizado);
+      setMensagem(`${pontosResgate} pontos resgatados. Saldo atual: ${atualizado.saldoPontosSoulUp} pts.`);
+    } catch (e) {
+      setErro((e as Error).message);
+    }
+  };
+
+  const aoExcluir = async (): Promise<void> => {
+    if (!usuario || !window.confirm(`Excluir o usuário ${usuario.nome}?`)) return;
+    setErro("");
+    try {
+      await api.removerUsuario(idUsuario);
+      navigate("/painel", { replace: true });
     } catch (e) {
       setErro((e as Error).message);
     }
@@ -134,7 +158,7 @@ export default function UsuarioDetalhe() {
         </div>
       </dl>
 
-      <div className="mt-6">
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <section className={estiloCard} aria-labelledby="titulo-dados">
           <div className="flex items-center justify-between">
             <h2 id="titulo-dados" className="text-xl font-bold text-verde-folha">Dados do cadastro</h2>
@@ -166,6 +190,19 @@ export default function UsuarioDetalhe() {
               <div className="flex justify-between gap-4"><dt className="text-white/65">Situação</dt><dd>{usuario.cadastroAtivo ? "Ativo" : "Inativo"}</dd></div>
             </dl>
           )}
+        </section>
+
+        <section className={estiloCard} aria-labelledby="titulo-resgate">
+          <h2 id="titulo-resgate" className="text-xl font-bold text-verde-folha">Resgatar pontos</h2>
+          <p className="mt-2 text-sm text-white/75">Troque Pontos Soul Up por benefícios. O resgate é validado pela API (cadastro ativo e saldo suficiente).</p>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <input type="number" min="1" value={pontosResgate} aria-label="Pontos a resgatar"
+              onChange={(e) => setPontosResgate(e.target.valueAsNumber)} className={estiloCampo} />
+            <Botao onClick={aoResgatar} className="shrink-0">Resgatar</Botao>
+          </div>
+          <hr className="my-5 border-white/10" />
+          <Botao variante="secundario" onClick={aoExcluir} className="w-full">Excluir usuário</Botao>
+          <p className="mt-2 text-xs text-white/50">A API só permite excluir usuários sem viagens registradas.</p>
         </section>
       </div>
 
