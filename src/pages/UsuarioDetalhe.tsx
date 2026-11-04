@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import Botao from "../components/Botao";
 import Mensagem from "../components/Mensagem";
 import Carregando from "../components/Carregando";
 import { api } from "../services/api";
 import { formatarNumero } from "../utils/carbono";
-import type { EstadoRequisicao, Usuario, Viagem } from "../types";
+import type { AtualizacaoUsuario, EstadoRequisicao, Usuario, Viagem } from "../types";
 
 /**
  * Rota dinâmica /usuarios/:id — detalhe de um usuário vindo da API.
- * Mostra os dados, o saldo e o histórico de viagens do usuário.
+ * Mostra os dados e o saldo, lista as viagens do usuário e permite editar o cadastro (PUT).
  */
 export default function UsuarioDetalhe() {
   const { id } = useParams<{ id: string }>();
@@ -22,13 +23,23 @@ export default function UsuarioDetalhe() {
   const [estado, setEstado] = useState<EstadoRequisicao>("carregando");
   const [erro, setErro] = useState<string>("");
   // Mensagem enviada pelo redirecionamento após o cadastro no Painel
-  const [mensagem] = useState<string>((location.state as { mensagem?: string } | null)?.mensagem ?? "");
+  const [mensagem, setMensagem] = useState<string>((location.state as { mensagem?: string } | null)?.mensagem ?? "");
+  const [editando, setEditando] = useState<boolean>(false);
+
+  const form = useForm<AtualizacaoUsuario>();
 
   const carregar = async (): Promise<void> => {
     try {
       const [u, v] = await Promise.all([api.buscarUsuario(idUsuario), api.listarViagensDoUsuario(idUsuario)]);
       setUsuario(u);
       setViagens(v);
+      form.reset({
+        nome: u.nome,
+        cpf: u.cpf,
+        email: u.email,
+        numeroBilheteTransporte: u.numeroBilheteTransporte,
+        cadastroAtivo: u.cadastroAtivo,
+      });
       setEstado("sucesso");
       document.title = `SoulMove | ${u.nome}`;
     } catch (e) {
@@ -47,6 +58,20 @@ export default function UsuarioDetalhe() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idUsuario]);
 
+  const aoSalvar = async (dados: AtualizacaoUsuario): Promise<void> => {
+    setErro("");
+    try {
+      const atualizado = await api.atualizarUsuario(idUsuario, dados);
+      setUsuario(atualizado);
+      setEditando(false);
+      setMensagem("Cadastro atualizado com sucesso.");
+    } catch (e) {
+      setErro((e as Error).message);
+    }
+  };
+
+  const estiloCampo =
+    "w-full rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-white placeholder-white/50 outline-none focus:border-verde-folha";
   const estiloCard = "rounded-2xl border border-white/15 bg-azul-escuro/70 p-5 backdrop-blur-sm md:p-6";
 
   if (estado === "carregando") {
@@ -111,13 +136,36 @@ export default function UsuarioDetalhe() {
 
       <div className="mt-6">
         <section className={estiloCard} aria-labelledby="titulo-dados">
-          <h2 id="titulo-dados" className="text-xl font-bold text-verde-folha">Dados do cadastro</h2>
-          <dl className="mt-4 space-y-2 text-sm">
-            <div className="flex justify-between gap-4"><dt className="text-white/65">CPF</dt><dd>{usuario.cpf}</dd></div>
-            <div className="flex justify-between gap-4"><dt className="text-white/65">E-mail</dt><dd className="break-all">{usuario.email}</dd></div>
-            <div className="flex justify-between gap-4"><dt className="text-white/65">Bilhete</dt><dd>{usuario.numeroBilheteTransporte}</dd></div>
-            <div className="flex justify-between gap-4"><dt className="text-white/65">Situação</dt><dd>{usuario.cadastroAtivo ? "Ativo" : "Inativo"}</dd></div>
-          </dl>
+          <div className="flex items-center justify-between">
+            <h2 id="titulo-dados" className="text-xl font-bold text-verde-folha">Dados do cadastro</h2>
+            {!editando && (
+              <Botao variante="fantasma" onClick={() => setEditando(true)}>Editar</Botao>
+            )}
+          </div>
+
+          {editando ? (
+            <form onSubmit={form.handleSubmit(aoSalvar)} className="mt-4 space-y-3" noValidate>
+              <input placeholder="Nome completo" className={estiloCampo} {...form.register("nome", { required: true })} />
+              <input placeholder="CPF" className={estiloCampo} {...form.register("cpf", { required: true })} />
+              <input type="email" placeholder="E-mail" className={estiloCampo} {...form.register("email", { required: true })} />
+              <input placeholder="Bilhete de transporte" className={estiloCampo} {...form.register("numeroBilheteTransporte", { required: true })} />
+              <label className="flex items-center gap-2 text-sm">
+                <input type="checkbox" className="accent-verde-folha" {...form.register("cadastroAtivo")} />
+                Cadastro ativo
+              </label>
+              <div className="flex gap-3">
+                <Botao type="submit">Salvar</Botao>
+                <Botao type="button" variante="secundario" onClick={() => setEditando(false)}>Cancelar</Botao>
+              </div>
+            </form>
+          ) : (
+            <dl className="mt-4 space-y-2 text-sm">
+              <div className="flex justify-between gap-4"><dt className="text-white/65">CPF</dt><dd>{usuario.cpf}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-white/65">E-mail</dt><dd className="break-all">{usuario.email}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-white/65">Bilhete</dt><dd>{usuario.numeroBilheteTransporte}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-white/65">Situação</dt><dd>{usuario.cadastroAtivo ? "Ativo" : "Inativo"}</dd></div>
+            </dl>
+          )}
         </section>
       </div>
 
