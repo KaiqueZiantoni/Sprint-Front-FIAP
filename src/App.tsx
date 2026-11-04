@@ -7,6 +7,8 @@ import Faq from "./pages/Faq";
 import Contato from "./pages/Contato";
 import Solucao from "./pages/Solucao";
 import SolucaoDetalhe from "./pages/SolucaoDetalhe";
+import Painel from "./pages/Painel";
+import UsuarioDetalhe from "./pages/UsuarioDetalhe";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -21,8 +23,11 @@ export default function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/solucao" element={<Solucao />} />
+          <Route path="/painel" element={<Painel />} />
           {/* Rota dinâmica com parâmetro */}
           <Route path="/solucao/:id" element={<SolucaoDetalhe />} />
+          {/* Rota dinâmica integrada à API: detalhe do usuário pelo id */}
+          <Route path="/usuarios/:id" element={<UsuarioDetalhe />} />
           {/* Rota coringa para páginas inexistentes */}
           <Route path="*" element={<NotFound />} />
         </Route>
