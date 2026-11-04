@@ -27,7 +27,7 @@ headers: { "Content-Type": "application/json" },
 ...opcoes,
 });
 } catch {
-    throw new Error("Não foi possível conectar à API. Verifique se o servidorestá no ar.");
+    throw new Error("Não foi possível conectar à API. Verifique se o servidor está no ar.");
 }
 if (resposta.status === 204) {
 return undefined as T;
